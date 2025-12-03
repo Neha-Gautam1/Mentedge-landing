@@ -1,75 +1,68 @@
-import { motion } from "framer-motion";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
-
-const sections = [
-  { id: "about", label: "About" },
-  { id: "skills", label: "Skills" },
-  { id: "projects", label: "Projects" },
-  { id: "contact", label: "Contact" },
-];
+// src/components/Footer.jsx
+import { FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
-  const handleScroll = (id) => {
-    const section = document.getElementById(id);
-    if (section) section.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
-    <footer className="py-12 bg-white border-t border-gray-200 text-center">
-      {/* Message */}
-      <motion.p
-        className="mb-6 text-lg text-gray-700"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        Let’s make something amazing together ✨
-      </motion.p>
+   <footer className="bg-gradient-to-br from-[#3b2416] via-[#4a2c18] to-[#1c120d] text-gray-300">
+ {/* Matched color from image */}
+      <div className="container mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+        
+        {/* Brand */}
+        <div>
+          <h3 className="text-lg font-semibold text-white">Rosewell Carpets</h3>
+          <p className="mt-3">
+            Handcrafted carpets from Mirzapur since 1998
+          </p>
 
-      {/* Quick Links */}
-      <div className="mb-6 flex justify-center flex-wrap gap-4">
-        {sections.map((sec, i) => (
-          <motion.button
-            key={i}
-            onClick={() => handleScroll(sec.id)}
-            className="text-gray-700 hover:text-indigo-500 font-medium transition"
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.1, duration: 0.4 }}
+          {/* Instagram Icon */}
+          <a
+            href="https://www.instagram.com/rosewellcarpets/?utm_source=qr&igsh=MXJydzVjaDRodm9lNA%3D%3D#"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center mt-4 text-orange-400 hover:text-orange-500"
           >
-            {sec.label}
-          </motion.button>
-        ))}
+            <FaInstagram size={22} className="mr-2" />
+            Follow us on Instagram
+          </a>
+        </div>
+
+        {/* Quick Links */}
+        <div>
+          <h3 className="text-lg font-semibold text-white">Quick Links</h3>
+          <ul className="mt-3 space-y-2">
+            <li><a href="/" className="hover:text-orange-500">Home</a></li>
+            <li><a href="/products" className="hover:text-orange-500">Products</a></li>
+            <li><a href="/about" className="hover:text-orange-500">About</a></li>
+            <li><a href="/contact" className="hover:text-orange-500">Contact</a></li>
+          </ul>
+        </div>
+
+        {/* Customer Service */}
+        <div>
+          <h3 className="text-lg font-semibold text-white">Customer Service</h3>
+          <ul className="mt-3 space-y-2">
+            <li><a href="/care" className="hover:text-orange-500">Care Instructions</a></li>
+            <li><a href="/size" className="hover:text-orange-500">Size Guide</a></li>
+            <li><a href="#" className="hover:text-orange-500">Returns</a></li>
+            <li><a href="/faqs" className="hover:text-orange-500">FAQ</a></li>
+          </ul>
+        </div>
+
+        {/* Contact Info */}
+        <div>
+          <h3 className="text-lg font-semibold text-white">Contact Info</h3>
+          <ul className="mt-3 space-y-2">
+            <li>+91 98765 43210</li>
+            <li>info@rosewellcarpets.com</li>
+            <li>Mirzapur, UP 231001</li>
+          </ul>
+        </div>
       </div>
 
-      {/* Call to Action Buttons */}
-      <div className="mb-6 flex justify-center gap-4">
-        <motion.a
-          href="https://www.linkedin.com/in/neha-gautam-4a80a4257/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white rounded-lg shadow-md hover:opacity-90 transition"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <FaLinkedin /> LinkedIn
-        </motion.a>
-        <motion.a
-          href="https://github.com/Neha-Gautam1"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white rounded-lg shadow-md hover:opacity-90 transition"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <FaGithub /> GitHub
-        </motion.a>
+      {/* Bottom Bar */}
+      <div className="border-t border-gray-700 text-center py-4 text-sm text-gray-400">
+        © 2024 Rosewell Carpets. All rights reserved.
       </div>
-
-      {/* Copyright */}
-      <p className="mt-6 text-sm text-gray-500">
-        © 2025 <span className="font-semibold text-gray-700">Neha</span>. All rights reserved.
-      </p>
     </footer>
   );
 }
