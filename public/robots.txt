@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://rosewell-frontend.vercel.app/sitemap.xml
